@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>stdPortal</title>
+</head>
+<body>
+<form action="" >
+   
+        <label for="nameInput">Enter your name:</label>
+       <input type="text" id="nameInput" required> <br> 
+
+       <!-- grade code -->
+       <label >Enter your marks: </label>
+       <input type="text" id="marks" oninput="calculateGrade()"> <br>
+       <label>Your Grade is: </label>
+       <input type="text" id="grade" readonly> <br>
+
+       <!-- age code -->
+       <label>Enter your Birth Date: </label>
+            <input type="text" id="bdate" oninput="getAge()"> <br>
+            <label>Your Age is: </label>
+            <input type="text" id="age" readonly> <br>
+           
+       <!-- university code -->
+       <label for="university">Select university:</label>
+       <select id="university" name="university" onchange="universityselec()">
+           <option value="Uniso">Uniso</option>
+           <option value="SIU">SIU</option>
+           <option value="JUS">JUS</option>
+           <option value="jazeera">jazeera</option>
+           <option value="muqdisho">muqdisho</option>
+           <option value="Umada">Umada</option>
+           <option value="plasma">plasma</option>
+           <option value="Banaadir">Banaadir</option>
+           <option value="City U">City</option>
+           <option value="Horsed">Horsed</option>
+           <option value="Hormuud">Hormuud</option>
+           <option value="Islamia">Islamia</option>
+           <option value="Marwazi">Marwazi</option>
+           <option value="Al carabiya">Al carabiya</option>
+           <option value="Al cimra">Al cimra</option>
+           <!-- Add more options as needed -->
+       </select><br>
+     
+    <label for="district">Select district:</label>
+    <select id="district" name="district" onchange="populateDistricts()">
+        <option value="boondheere">Boondheere</option>
+        <option value="cabdicaziiz">Cabdicaziiz</option>
+        <option value="dharkenley">Dharkenley</option>
+        <option value="dayniile">dayniile</option>
+        <option value=" hodan"> hodan</option>
+        <option value=" howlwadaag"> howlwadaag</option>
+        <option value="heliwaa">heliwaa</option>
+        <option value="kaaraan">kaaraan</option>
+        <option value="kaxda">kaxda</option>
+        <option value="shibis">shibis</option>
+        <option value=" wadajir">wadajira</option>
+        <option value="shangaani">shangaani</option>
+        <option value="waaberi"> waaberi</option>
+        <option value="wardhiigley"> wardhiigley</option>
+        <option value="xamarweyne">  xamarweyne</option>
+        <option value="xamarjajab"> xamarjajab</option>
+        <!-- <option value="dharkenley">Dharkenley</option> -->
+
+        <option value="cadaado"> cadaado</option>
+        <option value="caabuudwaaq"> caabuudwaaq</option>
+        <option value="ceelbuur"> ceelbuur</option>
+        <option value="ceeldheere"> ceeldheere</option>
+        <option value="dhuusamreeb"> dhuusamreeb</option>
+        <option value="gaalkacyo"> gaalkacyo</option>
+        <option value="galdogob"> galdogob</option>
+        <option value="hobyo"> hobyo</option>
+        <option value="jariiban"> jariiban</option>
+        <option value="xarardheere"> xarardheere</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="beladweyn"> beladweyn</option>
+        <option value="buulabarde"> buulabarde</option>
+        <option value="jalalaqsi"> jalalaqsi</option>
+        <option value="matabaan"> matabaan</option>
+        <option value="maxaas"> maxaas</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="baardheere">   baardheere</option>
+        <option value="beladxaawo"> beladxaawo</option>
+        <option value="ceelwaq"> ceelwaq</option>
+        <option value="doolow"> doolow</option>
+        <option value="garbahaarey"> garbahaarey</option>
+        <option value="luuq"> luuq</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="aadanyabaal"> aadanyabaal</option>
+        <option value="balcad"> balcad</option>
+        <option value="cadale"> cadale</option>
+        <option value="jawhar"> jawhar</option>
+        <option value="mahadaay"> mahadaay</option>
+        <option value="runrugood"> runrugood</option>
+        <option value="warshiikh"> warshiikh</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="afgooye"> afgooye</option>
+        <option value="awdhiigle"> awdhiigle</option>
+        <option value="baraawe"> baraawe</option>
+        <option value="janaale"> janaale</option>
+        <option value="marka"> marka</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="baydhabo"> baydhabo</option>
+        <option value="buurhakabo"> buurhakabo</option>
+        <option value="diinsoor"> diinsoor</option>
+        <option value="bardaale"> bardaale</option>
+        <option value="qansaxdheere"> qansaxdheere</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="biyooley"> biyooley</option>
+        <option value="celbarde"> celbarde</option>
+        <option value="xudur"> xudur</option>
+        <option value="rabdhuure"> rabdhuure</option>
+        <option value="tiyeglow"> tiyeglow</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="buaale"> buaale</option>
+        <option value="dujuma"> dujuma</option>
+        <option value="jilib"> jilib</option>
+        <option value="saakow"> saakow</option>
+        <!-- <option value=" xarardheere"> xarardheere</option> -->
+
+        <option value="afmadow"> afmadow</option>
+        <option value="badhaadhe"> badhaadhe</option>
+        <option value="jamaame"> jamaame</option>
+        <option value="xagar"> xagar</option>
+        <option value="kismaayo"> kismaayo</option>
+        <!--  -->
+    </select><br>
+     
+
+
+    <label for="city">Your City is:</label>
+    <input id="city" name="city" readonly> <br><br>
+
+    <label for="Stage">Select Stage:</label>
+    <select id="Stage" name="Stage" onchange="StageFlag()">
+        <option value="Banaadir">Banaadir</option>
+        <option value="Puntland">Puntland</option>
+        <option value="Jubaland">Jubaland</option>
+        <option value="Soomaliland">Soomaliland</option>
+        <option value="Hirshabeele">Hirshabeele</option>
+        <option value="Galmudug">Galmudug</option>
+        <option value="KonfurGalbeed">KonfurGalbeed</option>
+    </select><br>
+
+    <label for="flag">Your Flag is:</label>
+    <input id="flag" name="flag" readonly> <br>
+</form>
+    <script src="form.js"></script>
+</body>
+</html>
