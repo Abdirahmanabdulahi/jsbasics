@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CodeEVC.CSS">
+    <title>EVCPLUS Code</title>
+</head>
+<body>
+
+<h1>EVCPLUS Code</h1>
+
+<div>
+    <label >Enter Pin:</label>
+    <input type="password" id="password" required> <br><br>
+    <button onclick="checkPin()">Submit</button>
+    
+    
+</div>
+<br>
+<div style="margin-top: 10px;">
+    <label for="optionsInput">Select Option:</label>
+    
+    <input type="text" id="optionsInput"> <br><br>
+    <button onclick="handleOption()">Submit</button>
+    <button onclick="clearInput() " id="clear">clear</button>
+  
+</div>
+   
+<div id="consolOutput" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;"></div>
+
+
+<script>
+      
+let haraaga = 600;
+let pin = 6789;
+
+function checkPin() {
+    let userpin = document.getElementById("password").value;
+    
+    if (pin == userpin) {
+        showOptions();
+    } else if(pin == "") {
+        displayOutput("ma aadan gelin wax bina fadlan ku celi");
+    }else {
+        displayOutput("Pin kaagu waa qalad AMA ma aadan gelin wax pina");
+    }
+}
+
+function showOptions() {
+    let optionsOutput = "1. Itus haraagaaga\n" +
+                        "2. Kaarka hadalka\n" +
+                        "3. Bixi biil\n" +
+                        "4. U wareeji EVCPlus\n" +
+                        "5. Warbixin kooban\n" +
+                        "6. Salaam Bank\n" +
+                        "7. Maareynta\n" +
+                        "8. Bill Payment";
+    displayOutput(optionsOutput);
+}
+
+function handleOption() {
+    let selectedOption = document.getElementById("optionsInput").value;
+    switch (selectedOption) {
+        case "1":
+            displayOutput("Haraagaagu Waaa $" + haraaga);
+            break;
+        case "2":
+            displayOutput("Kaarka Hadalka");
+            Kaarka();
+            break;
+        case "3":
+            displayOutput("Bixi biil");
+            bill();
+            break;
+        case "4":
+            displayOutput("U wareeji EVCPlus");
+            wareejin();
+            break;
+        case "5":
+            displayOutput("Warbixin kooban");
+            warbixin();
+            break;
+        case "6":
+            displayOutput("Salaam Ban");
+            SalaamBank();
+            break;
+        case "7":
+            displayOutput("Maareynta");
+            Maareynta();
+            break;
+        case "8":
+            displayOutput("Bill Payment");
+            BillPayment();
+            break;
+        default:
+            displayOutput("Ma aadan dooran lambar AMA lambarka aad dooratay mahan mid ku jira liiska");
+            break;
+    }
+}
+
+function displayOutput(output) {
+    let consoleOutput = document.getElementById("consoleOutput");
+    consoleOutput.innerText = output;
+}
+
+function Kaarka() {
+    let kaarkaOutput = "Kaarka Hadalka\n" +
+                       "1. Ku shubo Airtime\n" +
+                       "2. Ugu Shub Airtime\n" +
+                       "3. MIFI Packages\n" +
+                       "4. Ku shubo internet\n" +
+                       "5. Ugu Shub qof kale (MMT)";
+                       
+    displayOutput(kaarkaOutput);
+}
+
+function bill() {
+    let billOutput = "Bixi Biil\n" +
+                     "1. Post Paid\n" +
+                     "2. Ku Iibso";
+    displayOutput(billOutput);
+}
+
+function wareejin() {
+    let wareejinOutput = "Fadlan Geli Mobile-Ka\n" +
+                         "Enter Mobile Number:";
+    displayOutput(wareejinOutput);
+}
+
+function warbixin() {
+    let warbixinOutput = "Warbixin Kooban\n" +
+                         "1. Last Action\n" +
+                         "2. Wareejintii u dambaysay\n" +
+                         "3. Iibsashadii u dambaysay\n" +
+                         "4. Last 3 Actions\n" +
+                         "5. Email me my Activity";
+    displayOutput(warbixinOutput);
+}
+
+function SalaamBank() {
+    let salaamBankOutput = "Salaam Bank\n" +
+                           "1. Ka Wareeji EVCPlus";
+    displayOutput(salaamBankOutput);
+}
+
+function Maareynta() {
+    let maareyntaOutput = "Maareynta\n" +
+                          "1. Bedel lambarka sirta ah\n" +
+                          "2. Bedel Luqadda\n" +
+                          "3. Wargelin Mobile Lumay\n" +
+                          "4. Lacag Xirasho\n" +
+                          "5. U celi lacag qaldantay\n" +
+                          "6. Enable Mobile Banking";
+    displayOutput(maareyntaOutput);
+}
+
+function BillPayment() {
+    let billPaymentOutput = "Bill Payment\n" +
+                           "1. Itus Haraaga Bill ka\n" +
+                           "2. Wada bixi Bill-ka\n" +
+                           "3. Qayb ka bixi Bill-ka";
+    displayOutput(billPaymentOutput);
+}
+
+function displayOutput(output) {
+    let consoleOutput = document.getElementById("consolOutput");
+    consolOutput.innerText = output;
+}
+function Kaar() {
+    let kaarOutput = "Kaar Hadalka\n" +
+                       "1. Ku shubo Airtime\n" +
+                       "2. Ugu Shub Airtime\n" +
+                       "3. MIFI Packages\n" +
+                       "4. Ku shubo internet\n" +
+                       "5. Ugu Shub qof kale (MMT)";
+    displayOutput(kaarOutput);
+}
+
+
+function clearInput() {
+    document.getElementById("optionsInput").value = ""
+}
+
+</script>
+
+</body>
+</html>
