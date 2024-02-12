@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <title>All Info Form</title>
+</head>
+<body>
+    <form>
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" placeholder="Enter your name:" required> <br>
+
+        <!-- grade code -->
+        <label for="marks">Enter your marks:</label>
+        <input type="text" id="marks" placeholder="Enter your marks:" oninput="calculateGrade()"> <br>
+        <label>Your Grade is: </label>
+        <input type="text" id="grade" readonly> <br>
+
+        <!-- scholarship section -->
+        <div class="scho" style="display: none;">
+            <h1>Congratulations and best wishes for your next adventure!</h1>
+            <p>Please fill in this form to get a full scholarship. Thank you.</p>
+            <input type="text" id="name" placeholder="Enter your name">
+            <input type="text" id="country" placeholder="Enter your country">
+            <input type="text" id="city" placeholder="Enter your city">
+            <input type="text" id="faculty" placeholder="Enter the faculty you are interested in">
+        </div>
+    </form>
+
+    <script>
+        function calculateGrade() {
+            var marks = $("#marks").val();
+            var grade = '';
+
+            if (marks > 100) {
+                grade = 'Value must be less than or equal to 100';
+            } else if (marks >= 90) {
+                grade = 'A';
+            } else if (marks >= 80) {
+                grade = 'B';
+            } else if (marks >= 70) {
+                grade = 'C';
+            } else if (marks >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+
+            $("#grade").val(grade);
+
+            if (marks >= 80 && marks <= 100) {
+                $(".scho").show();
+            } else {
+                $(".scho").hide();
+            }
+        }
+
+        $(document).ready(function(){  
+            calculateGrade(); 
+        });
+    </script>
+</body>
+</html>
+
