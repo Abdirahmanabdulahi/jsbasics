@@ -1,0 +1,48 @@
+/* Styles for the login form */
+#login-form {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #66ff00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* #login-form input[type="submit"]:hover {
+    background-color: #f10b0b;
+} */
+
+#login-message {
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(7, 7, 7);
+}
